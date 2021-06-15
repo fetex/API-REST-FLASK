@@ -1,22 +1,19 @@
-from flask import (
-    Blueprint,
-    render_template,
-)
-from flask_login import (
-    login_required,
-    current_user,
-)
-from . import db
+from re import S
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
-main = Blueprint("main", __name__)
+app = Flask(__name__)
+app.config["SQL_ALCHEMY_DATABASE_URI"] = 'mysql://root:root@db/crea'
+CORS(app)
+
+db= SQLAlchemy(app)
 
 
-@main.route("/")
+
+@app.route('/')
 def index():
-    return "This is a index"
+    return "prueba"
 
-
-@main.route("/profile")
-@login_required
-def profile():
-    return "This is a profile"  # TODO: Return a json with user data
+if __name__== '__main__':
+    app.run(debug=True, host='0.0.0.0')
