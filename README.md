@@ -3,6 +3,14 @@
 ## Front end
 <!-- TODO: Here should be the instructions about the execution of the frontend -->
 
+
+## Build docker
+
+Run command
+
+> `docker-compose up --build`
+
+
 ## Flask (Version Linux)
 1. Create a virtual enviroment
 > `python -m venv venv`
@@ -17,3 +25,4 @@ export FLASK_DEBUG=1
 ```
 5. Ready
 > `flask run`
+
